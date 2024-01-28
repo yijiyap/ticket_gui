@@ -33,11 +33,16 @@ bool MyApp::OnInit()
 }
  
 MyFrame::MyFrame()
-    : wxFrame(nullptr, wxID_ANY, "Hello World")
+    : wxFrame(nullptr, wxID_ANY, "TicketBoost")
 {
     wxMenu *menuFile = new wxMenu;
-    menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
-                     "Help string shown in status bar for this menu item");
+    menuFile->Append(ID_Hello, "&Search for events\tCtrl-L",
+                     "Taylor Swift, Coldplay, Bruno Mars and more!");
+    menuFile->Append(ID_Hello, "&Bought tickets\tCtrl-J",
+                     "Time for your show!");
+    menuFile->Append(ID_Hello, "&Help\tCtrl-H",
+                     "What do you need help with? (nielsen heuristic ez)");
+    
     menuFile->AppendSeparator();
     menuFile->Append(wxID_EXIT);
  
@@ -51,7 +56,7 @@ MyFrame::MyFrame()
     SetMenuBar( menuBar );
  
     CreateStatusBar();
-    SetStatusText("Welcome to wxWidgets!");
+    SetStatusText("Welcome to TicketBoost!");
  
     Bind(wxEVT_MENU, &MyFrame::OnHello, this, ID_Hello);
     Bind(wxEVT_MENU, &MyFrame::OnAbout, this, wxID_ABOUT);
@@ -65,11 +70,11 @@ void MyFrame::OnExit(wxCommandEvent& event)
  
 void MyFrame::OnAbout(wxCommandEvent& event)
 {
-    wxMessageBox("This is a wxWidgets Hello World example",
-                 "About Hello World", wxOK | wxICON_INFORMATION);
+    wxMessageBox("Created by top students of SMU for IS213",
+                 "About TicketBoost", wxOK | wxICON_INFORMATION);
 }
  
 void MyFrame::OnHello(wxCommandEvent& event)
 {
-    wxLogMessage("Hello world from wxWidgets!");
+    wxLogMessage("I love Prof Jiang ⭑");
 }
