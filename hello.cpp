@@ -22,7 +22,10 @@ private:
  
 enum
 {
-    ID_Hello = 1
+    ID_Hello = 0,
+    ID_Search = 1,
+    ID_Bought = 2,
+    ID_Help = 3
 };
  
 bool MyApp::OnInit()
@@ -36,11 +39,11 @@ MyFrame::MyFrame()
     : wxFrame(nullptr, wxID_ANY, "TicketBoost")
 {
     wxMenu *menuFile = new wxMenu;
-    menuFile->Append(ID_Hello, "&Search for events\tCtrl-L",
+    menuFile->Append(ID_Search, "&Search for events\tCtrl-L",
                      "Taylor Swift, Coldplay, Bruno Mars and more!");
-    menuFile->Append(ID_Hello, "&Bought tickets\tCtrl-J",
+    menuFile->Append(ID_Bought, "&Bought tickets\tCtrl-J",
                      "Time for your show!");
-    menuFile->Append(ID_Hello, "&Help\tCtrl-H",
+    menuFile->Append(ID_Help, "&Help\tCtrl-H",
                      "What do you need help with? (nielsen heuristic ez)");
     
     menuFile->AppendSeparator();
